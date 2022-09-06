@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
+        <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
+            <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">About Us</h1>
+            <div class="d-inline-flex mb-lg-5">
+                <p class="m-0 text-white"><a class="text-white" href="{% url 'home' %}">Home</a></p>
+                <p class="m-0 text-white px-2">/</p>
+                <p class="m-0 text-white">About Us</p>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-0">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="text-primary text-uppercase" style="letter-spacing: 2px;">Our Story</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 py-0 py-lg-0">
+                    <h2 class="mb-3">The Begining</h2>
+                    <p>The CliffNeck Restaurant situated in an old house in Karen was originally occupied by the famous 
+                        wildlife photographer and author Alan Root in his youth. CliffNeck was created by Ian and Charlie 
+                        Cameron as a small family and friendly kitchen restaurant.</p>
+                    <p>Stuart Herd and Satyan Patel took over The CliffNeck in 2012 with a promise to maintain it’s 
+                        values. The CliffNeck has since grown into arguably the best restaurant in the country. Value 
+                        for the environment is part of the most important cultures at CliffNeck. Evident from the 
+                        ambience and the look of the restaurant itself.</p>
+                    <p>We are 100% plastic free zone, maintaining an organic garden that supplies some of our fresh 
+                        produce. All our vendors are vetted and we conduct hygiene tests on supplier products. 
+                        We use Bamboo straws and all our water bottles are recyclable. Our partners – Takataka 
+                        solutions ensure that our waste management is done in the highest of standards.</p>
+                    <h2 class="mb-3">Our Vision</h2>
+                    <p>The CliffNeck Restaurant situated in an old house in Karen was originally occupied by the famous 
+                        wildlife photographer and author Alan Root in his youth. CliffNeck was created by Ian and Charlie 
+                        Cameron as a small family and friendly kitchen restaurant.</p>
+                    <p>Stuart Herd and Satyan Patel took over The CliffNeck in 2012 with a promise to maintain it’s 
+                        values. The CliffNeck has since grown into arguably the best restaurant in the country. Value 
+                        for the environment is part of the most important cultures at CliffNeck. Evident from the 
+                        ambience and the look of the restaurant itself.</p>
+                    <p>We are 100% plastic free zone, maintaining an organic garden that supplies some of our fresh 
+                        produce. All our vendors are vetted and we conduct hygiene tests on supplier products. 
+                        We use Bamboo straws and all our water bottles are recyclable. Our partners – Takataka 
+                        solutions ensure that our waste management is done in the highest of standards.</p>
+                </div>
+                <div class="col-lg-4 py-5 py-lg-0" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100" src="{% static 'img/about.png' %}" style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header mb-5 position-relative overlay-bottom">
+    <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
+        <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-primary text-uppercase">Add Image</h1>
+        <div class="d-inline-flex mb-lg-5">
+            <p class="m-0 text-white"><a class="text-white" href="{% url 'home' %}">Home</a></p>
+            <p class="m-0 text-white px-2">/</p>
+            <p class="m-0 text-white">Add Image</p>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<!-- Reservation Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="reservation position-relative overlay-top overlay-bottom">
+            <div class="row align-items-center">
+                <div class="col-lg-6 my-5 my-lg-0">
+                    <div class="p-5" style="background: rgba(51, 33, 29, .8);">
+                        <div class="mb-4">
+                            <h2 class="text-white">Elements of a Great Image:</h2>
+                        </div>
+                        <p class="text-white">There are many important components to creating a stunning photograph. 
+                            Some of the most important are your ability to: </p>
+                        <ul class="list-inline text-white m-0">
+                            <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Capture the right light</li>
+                            <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Capture the right composition</li>
+                            <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Capture the right moment</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-center p-5" style="background: rgba(51, 33, 29, .8);">
+                        <h1 class="text-white mb-4 mt-5">Choose an Image</h1>
+                        <form method="POST" enctype="multipart/form-data" class="mb-5"> 
+                            {% csrf_token %}                          
+                            <div class="form-group">
+                                <input type="file" class="form-control bg-transparent border-primary p-0 text-white" id="myFile" name="filename" required="required">
+                            </div>                            
+                            <div>
+                                <button class="btn btn-primary btn-block font-weight-bold py-3" type="submit">Add Image</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Reservation End -->
+
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
+        <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
+            <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">Gallery</h1>
+            <div class="d-inline-flex mb-lg-5">
+                <p class="m-0 text-white"><a class="text-white" href="{% url 'home' %}">Home</a></p>
+                <p class="m-0 text-white px-2">/</p>
+                <p class="m-0 text-white">Gallery</p>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-0">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="text-primary text-uppercase" style="letter-spacing: 2px;">Gallery</h2>
+                {% if user.is_superuser %}
+                <a href="{% url 'addimage' %}" class="btn btn-primary font-weight-bold py-2 px-4 mt-2">Add Image</a>
+                {% endif %}
+            </div>
+            <div class="row">
+                {% for image in images %}
+                <div class="col-lg-4 py-3 py-lg-3">
+                    <div class="position-relative h-50" style="min-height: 200px;">
+                        {% if image.image %}
+                        <img class="position-absolute w-100 h-100" src="{{image.image.url}}" style="object-fit: cover;">
+                        {% endif %}
+                    </div>
+                    {% if user.is_superuser %}
+                    <div class="row">
+                        <a href="{% url 'delete' image.id %}" class="nav-item nav-link font-weight-bold">Delete</a>
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+{% endblock %}
